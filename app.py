@@ -6,6 +6,9 @@ import pickle
 import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
+from sklearn.preprocessing import StandardScalar
+
+sc=StandardaScalar()
 
 app = Flask(__name__)
 
@@ -25,7 +28,8 @@ def result():
     
     values=[[cylinders,displacement,horsepower,weight,acceleration,model_year,origin]]
 
-    sc = pickle.load(open('scaler.pkl','rb'))
+    sc = None
+    sc = pickle.load(open('scaler.pkl','rb')
         
     values=sc.transform(values)
 
