@@ -5,8 +5,6 @@ from sklearn.externals import joblib
 import os
 import pickle
 import pandas as pd
-import flasgger
-from flasgger import Swagger
 import numpy as np
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import StandardScaler
@@ -14,7 +12,6 @@ from sklearn.preprocessing import StandardScaler
 sc=StandardScaler()
 
 app = Flask(__name__)
-Swagger(app)
 
 @app.route("/")
 def index():
