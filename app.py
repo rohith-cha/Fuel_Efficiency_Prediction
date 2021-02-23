@@ -3,10 +3,9 @@
 from flask import Flask, render_template,url_for,request,jsonify
 import os
 import pickle
-import pandas as pd
+import joblib
 import numpy as np
 from tensorflow.keras.models import load_model
-from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScalar
 
 sc=StandardScalar()
@@ -28,12 +27,16 @@ def result():
     origin=int(request.form["origin"])
     
     values=[[cylinders,displacement,horsepower,weight,acceleration,model_year,origin]]
+    
+    scaler_path=os.path.join(os.path.dirname('C:/Users/ROHITH/DATA SCIENCE/Project/Fuel Efficiency Prediction/'),'scaler.pkl')
 
-    sc = pickle.load(open('scaler.pkl','rb')
+    sc= None
+    with open(scaler_path,'rb') as f:
+        sc=pickle.load(f)
         
     values=sc.transform(values)
 
-    model=load_model("model.h5")
+    model=load_model(r"C:\Users\ROHITH\DATA SCIENCE\Project\Fuel Efficiency Prediction\model.h5")
 
     prediction=model.predict(values)
     prediction=float(prediction)
