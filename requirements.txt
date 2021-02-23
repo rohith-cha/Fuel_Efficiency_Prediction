@@ -10,5 +10,4 @@ seaborn
 scikit-learn>=0.24.0
 matplotlib
 pandas
-tensorflow
 urllib3==1.26.2
