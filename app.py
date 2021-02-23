@@ -1,7 +1,7 @@
 # FLask API is a tool which helps to connect webs servers to your project
 
 from flask import Flask, render_template,url_for,request,jsonify
-import joblib
+from sklearn.externals import joblib
 import os
 import pickle
 import pandas as pd
