@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template,url_for,request,jsonify
 import os
+import joblib
 import pickle
 import pandas as pd
 import numpy as np
