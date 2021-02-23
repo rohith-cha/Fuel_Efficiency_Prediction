@@ -6,9 +6,9 @@ import pickle
 import joblib
 import numpy as np
 from tensorflow.keras.models import load_model
-from sklearn.preprocessing import StandardScalar
+from sklearn.preprocessing import StandardScaler
 
-sc=StandardScalar()
+sc=StandardScaler()
 
 app = Flask(__name__)
 
