@@ -28,16 +28,13 @@ def result():
     
     values=[[cylinders,displacement,horsepower,weight,acceleration,model_year,origin]]
     
-    scaler_path=os.path.join(os.path.dirname('C:/Users/ROHITH/DATA SCIENCE/Project/Fuel Efficiency Prediction/'),'scaler.pkl')
-
-    sc= None
-    with open(scaler_path,'rb') as f:
-        sc=pickle.load(f)
+    sc =None
+    sc =pickle.load(open('scaler.pkl','rb'))
         
-    values=sc.transform(values)
+    values =sc.transform(values)
 
-    model=load_model(r"C:\Users\ROHITH\DATA SCIENCE\Project\Fuel Efficiency Prediction\model.h5")
-
+    model =pickle.load(open('model.h5','rb'))
+    
     prediction=model.predict(values)
     prediction=float(prediction)
     print(prediction)
