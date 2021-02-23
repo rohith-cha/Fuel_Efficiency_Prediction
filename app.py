@@ -2,11 +2,11 @@
 
 from flask import Flask, render_template,url_for,request,jsonify
 import os
-import joblib
 import pickle
 import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
+from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScalar
 
 sc=StandardScalar()
