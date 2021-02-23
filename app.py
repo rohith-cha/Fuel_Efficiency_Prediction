@@ -28,15 +28,11 @@ def result():
     
     values=[[cylinders,displacement,horsepower,weight,acceleration,model_year,origin]]
 
-    scaler_path=os.path.join(os.path.dirname('D:/Python37/Projects/Fuel Efficiency Prediction using ANN/models/'),'scaler.pkl')
-
-    sc=None
-    with open(scaler_path,'rb') as f:
-        sc=pickle.load(f)
+    sc = pickle.load(open('scaler.pkl','rb'))
         
     values=sc.transform(values)
 
-    model=load_model(r"D:\Python37\Projects\Fuel Efficiency Prediction using ANN\models\model.h5")
+    model=load_model("model.h5")
 
     prediction=model.predict(values)
     prediction=float(prediction)
@@ -49,4 +45,4 @@ def result():
     return jsonify(json_dict)
     
 if __name__=="__main__":
-    app.run(debug=True,port=3298)
+    app.run(debug=True)
