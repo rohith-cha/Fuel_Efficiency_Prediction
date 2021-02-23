@@ -8,7 +8,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import StandardScalar
 
-sc=StandardaScalar()
+sc=StandardScalar()
 
 app = Flask(__name__)
 
