@@ -3,6 +3,7 @@
 from flask import Flask, render_template,url_for,request,jsonify
 import os
 import pickle
+import pandas as pd
 import joblib
 import numpy as np
 import sklearn
