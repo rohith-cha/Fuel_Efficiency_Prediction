@@ -5,6 +5,7 @@ import os
 import pickle
 import joblib
 import numpy as np
+import sklearn
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import StandardScaler
 
@@ -28,6 +29,7 @@ def result():
     
     values=[[cylinders,displacement,horsepower,weight,acceleration,model_year,origin]]
     
+    sc = None
     with open('scaler.pkl', 'rb') as f:
      sc = pickle.load(f)
         
