@@ -7,11 +7,11 @@ Werkzeug==1.0.1
 numpy
 scipy
 seaborn
-scikit-learn
+scikit-learn==0.24.0
 matplotlib
 pandas
 urllib3==1.26.2
 tensorflow==2.0
 joblib
 sklearn==0.0
-
+Keras-Preprocessing==1.1.2
