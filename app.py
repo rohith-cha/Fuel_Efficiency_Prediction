@@ -37,13 +37,8 @@ def result():
     
     prediction=model.predict(values)
     prediction=float(prediction)
-    print(prediction)
     
-    json_dict={
-        "prediction":prediction
-    }   
-    
-    return jsonify(json_dict)
+    return render_template('home.html',prediction_text="You car fuel efficiency is {}".format( prediction))
     
 if __name__=="__main__":
     app.run(debug=True)
