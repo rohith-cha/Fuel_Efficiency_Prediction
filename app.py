@@ -36,7 +36,7 @@ def result():
         
     values =sc.transform(values)
 
-    model =pickle.load(open('model.h5','rb'))
+    model =load_model("model.h5")
     
     prediction=model.predict(values)
     prediction=float(prediction)
