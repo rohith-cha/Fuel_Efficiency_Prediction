@@ -28,7 +28,8 @@ def result():
     
     values=[[cylinders,displacement,horsepower,weight,acceleration,model_year,origin]]
     
-    sc =pickle.load(open('scaler.pkl','rb'))
+    with open('scaler.pkl', 'rb') as f:
+     sc = pickle.load(f)
         
     values =sc.transform(values)
 
