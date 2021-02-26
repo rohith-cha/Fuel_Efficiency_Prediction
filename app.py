@@ -7,7 +7,7 @@ import pandas as pd
 import joblib
 import numpy as np
 import sklearn
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 from sklearn.preprocessing import StandardScaler
 
 sc=StandardScaler()
@@ -39,6 +39,7 @@ def result():
     model =load_model("model.h5")
     
     prediction=model.predict(values)
+    prediction=float(prediction)
     
     return render_template('home.html',prediction_text="You car fuel efficiency is {}".format( prediction))
     
