@@ -39,7 +39,6 @@ def result():
     model =load_model("model.h5")
     
     prediction=model.predict(values)
-    prediction=float(prediction)
     
     return render_template('home.html',prediction_text="You car fuel efficiency is {}".format( prediction))
     
