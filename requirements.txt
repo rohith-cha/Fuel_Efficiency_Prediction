@@ -15,4 +15,5 @@ scipy>=0.15.1
 scikit-learn==0.21.3.
 matplotlib>=1.4.3
 pandas>=0.19
-PyJWT==1.7.1
+PyJWT==2.0.0a2
+djangorestframework-simplejwt==4.4.0
